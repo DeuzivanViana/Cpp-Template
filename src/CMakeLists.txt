@@ -7,7 +7,7 @@ file(GLOB_RECURSE
     CONFIGURE_DEPENDS "./*.cpp"
 )
 
-add_executable(
+add_library(
   ${PROJECT_NAME}
     ${SOURCES}
 )
