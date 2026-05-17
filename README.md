@@ -16,3 +16,5 @@ Set flags to `OFF` or `ON` as you want.
 - `test.elf`in `build/test/test.elf`
 - `app.elf`in `build/src/app.elf`
 
+## Libs required
+- `libgtest-dev` on debian install with `sudo apt install libgtest-dev`
