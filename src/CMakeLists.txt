@@ -8,32 +8,58 @@ file(GLOB_RECURSE
 )
 
 add_library(
-  ${PROJECT_NAME}
+  app
     ${SOURCES}
 )
 
 target_include_directories(
-  ${PROJECT_NAME}
+  app
   PRIVATE
     ../include
 )
 
 target_compile_options(
-  ${PROJECT_NAME}
+  app
     PRIVATE
       ${SANITIZE_FLAGS}
 )
 
 target_link_options(
-  ${PROJECT_NAME}
+  app
     PRIVATE
       ${SANITIZE_FLAGS}
 )
 
 target_link_libraries(
-  ${PROJECT_NAME}
+  app
     PRIVATE 
-      # SDL3::SDL3 
-      # SDL3_ttf::SDL3_ttf
-      # SDL3_image::SDL3_image
+)
+
+add_executable(
+  app.elf
+    ${SOURCES}
+)
+
+target_include_directories(
+  app.elf
+  PRIVATE
+    ../include
+)
+
+target_compile_options(
+  app.elf
+    PRIVATE
+      ${SANITIZE_FLAGS}
+)
+
+target_link_options(
+  app.elf
+    PRIVATE
+      ${SANITIZE_FLAGS}
+)
+
+target_link_libraries(
+  app.elf
+    PRIVATE 
+    app
 )
